@@ -6,6 +6,8 @@ const Todo = () => {
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState("");
 
+    useEffect(()=>{inputRef.current.focus()}, []);
+
     useEffect(() => {
         console.log(tasks);
     }, [tasks]);
@@ -14,7 +16,7 @@ const Todo = () => {
         if(input.trim()){
             setTasks([...tasks, {title: input, completed: false}]);
             setInput("");
-            
+            inputRef.current.focus();
         }
     }
 
