@@ -20,9 +20,20 @@ const Todo = () => {
         }
     }
 
+    const toggleTask = (index) =>{
+        const newTasks = [...tasks];
+        newTasks[index].completed = !newTasks[index].completed;
+        setTasks(newTasks);
+    }
+
 return(
     
     <div>
+        <ul>
+            {tasks.map((task, i) => {
+                return (<li key={i}><input type="checkbox" onChange={() => toggleTask(i)} checked={task.completed}/>{task.title}</li>);
+            })}
+        </ul>
         <input type="text" onChange={(e) => {setInput(e.target.value)}} value={input} ref={inputRef} placeholder="Enter Task: " onKeyDown={(e) => {e.key==="Enter" && addTask()}} />
     </div>
 );
