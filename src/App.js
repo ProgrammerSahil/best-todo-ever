@@ -3,13 +3,15 @@ import Todo from './components/Todo';
 
 function App() {
   return (
-    <div className="Home">
+    <div className='mainContainer'>
+    <div className="taskContainer">
 
-    <h2>Made by Sahil for testing purposes</h2>
+    <h2 className='mainHeading'>Made by Sahil for testing purposes</h2>
 
     <Todo/>
 
       
+    </div>
     </div>
   );
 }
